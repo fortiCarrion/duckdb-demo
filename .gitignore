@@ -12,6 +12,7 @@ __pycache__/
 
 # Distribution / packaging
 data/
+*.db
 .Python
 build/
 develop-eggs/
