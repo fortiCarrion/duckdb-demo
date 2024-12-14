@@ -1,11 +1,14 @@
+import time
 import streamlit as st
-from dotenv import load_dotenv
+from pipeline_01 import pipeline
 
-load_dotenv()  # take environment variables from .env.
+st.title('Processador de Arquivos')
 
-def main():
-    st.write("duckdb pipeline (poc)")
-
-
-if __name__ == "__main__":
-    main()
+if st.button('Processar'):
+    with st.spinner('Processando...'):
+        time.sleep(2)
+        logs = pipeline()
+        # exibe os logs no streamlit
+        for log in logs:
+            time.sleep(.5)
+            st.write(log)
