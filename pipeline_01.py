@@ -86,7 +86,8 @@ def pipeline():
     GOOGLE_DRIVE_FOLDER_URL = os.getenv("GOOGLE_DRIVE_FOLDER_URL")
 
     diretorio_local = "./data/gdown"
-    #baixar_arquivos_google_drive(GOOGLE_DRIVE_FOLDER_URL, diretorio_local)
+    os.makedirs(diretorio_local, exist_ok=True)
+    baixar_arquivos_google_drive(GOOGLE_DRIVE_FOLDER_URL, diretorio_local)
 
     lista_arquivos = listar_arquivos(diretorio_local)
     con = conectar_banco()
